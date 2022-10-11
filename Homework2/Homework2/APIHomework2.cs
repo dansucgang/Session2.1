@@ -140,6 +140,10 @@ namespace Homework2
             var categoryid = listUserData.Category.Id;
             var categoryname = listUserData.Category.Name;
             var photouls = listUserData.PhotoUrls[0];
+            var tagsid = listUserData.Tags[0].Id;
+            var tagsname = listUserData.Tags[0].Name;
+
+
             
 
 
@@ -162,6 +166,9 @@ namespace Homework2
             Assert.AreEqual(userData.Category.Id, categoryid, "Category id not moatching");
             Assert.AreEqual(userData.Category.Name, categoryname, "Category name not moatching");
             Assert.AreEqual(userData.PhotoUrls[0], photouls, "PhotoUrls not moatching");
+            Assert.AreEqual(userData.Tags[0].Id, tagsid, "Tags Id not moatching");
+            Assert.AreEqual(userData.Tags[0].Name, tagsname, "Tags Name not moatching");
+
             #endregion
         }
     }
