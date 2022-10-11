@@ -61,7 +61,7 @@ namespace Homework2
                 { 
                     new Category { 
                         Id = 8020, 
-                        Name = "Orange" 
+                        Name = "Dog" 
                     } 
                 },
                 PhotoUrls = new string[1] { "Photo_String" },
