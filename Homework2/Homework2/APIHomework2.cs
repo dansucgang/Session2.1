@@ -48,7 +48,7 @@ namespace Homework2
             List<Category> categories = new List<Category>();
             categories.Add(new Category()
             {
-                Id = 8060,
+                Id = 8070,
                 Name = "string"
             });
             #region create data
@@ -56,14 +56,15 @@ namespace Homework2
             // Create Json Object
             UserModel userData = new UserModel()
             {
-                Id = 8060,
+                Id = 8070,
                 Name = "Mio",
                 Status = "available",
                 Category = new Category()
                 {
-                    Id = 8060,
+                    Id = 8070,
                     Name = "string"
                 },
+                Tags = categories,
                 PhotoUrls = new string[] { "https://petstore.swagger.io/#/pet/updatePet" },
             };
 
@@ -94,12 +95,12 @@ namespace Homework2
             // Update value of userData
             userData = new UserModel()
             {
-                Id = 8070,
+                Id = 8080,
                 Name = "Chimmy",
                 Status = "Unavailable",
                 Category = new Category()
                 {
-                    Id = 8070,
+                    Id = 8080,
                     Name = "string",
                 },
                 Tags = listUserData.Tags,
@@ -134,8 +135,9 @@ namespace Homework2
             var categoryid = listUserData.Category.Id;
             var categoryname = listUserData.Category.Name;
             var photouls = listUserData.PhotoUrls[0];
-            var tags = listUserData.Tags;
-           // var tagsid = listUserData.Tags[0].Id;
+            var tags = listUserData.Tags[0].Id;
+            var tagsname = listUserData.Tags[0].Name;
+            // var tagsid = listUserData.Tags[0].Id;
             //var tagsname = listUserData.Tags[0].Name;
 
             #endregion
@@ -156,9 +158,10 @@ namespace Homework2
             Assert.AreEqual(userData.Status, updatedStatus, "Status not matching");
             Assert.AreEqual(userData.Category.Id, categoryid, "Category id not moatching");
             Assert.AreEqual(userData.Category.Name, categoryname, "Category name not moatching");
-            Assert.AreEqual(userData.PhotoUrls[0], photouls, "PhotoUrls not moatching");
-            Assert.AreEqual(userData.Tags, tags, "Tags Id not matching");
-           // Assert.AreEqual(userData.Tags[0].Name, tagsname, "Tags Name not moatching");
+            Assert.AreEqual(userData.PhotoUrls[0], photouls, "PhotoUrls not matching");
+            Assert.AreEqual(userData.Tags[0].Id, tags, "Tags Id not matching");
+            Assert.AreEqual(userData.Tags[0].Name, tagsname, "Tags Id not matching");
+            // Assert.AreEqual(userData.Tags[0].Name, tagsname, "Tags Name not moatching");
 
             #endregion
         }
