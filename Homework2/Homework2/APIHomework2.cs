@@ -49,7 +49,7 @@ namespace Homework2
             // Create Json Object
             UserModel userData = new UserModel()
             {
-                Id = 8022,
+                Id = 8033,
                 Name = "Mio",
                 Status = "available",
                 Category = new Category()
@@ -64,7 +64,7 @@ namespace Homework2
                         Name = "Dog" 
                     } 
                 },
-                PhotoUrls = new string[1] { "Photo_String" },
+                PhotoUrls = new string[] { "https://petstore.swagger.io/#/pet/updatePet" },
             };
 
             // Serialize Content
@@ -94,17 +94,23 @@ namespace Homework2
             // Update value of userData
             userData = new UserModel()
             {
-                Id = listUserData.Id,
+                Id = 8099,
                 Name = "Chimmy",
-                Status = listUserData.Status,
+                Status = "Unavailable",
                 Category = new Category()
                 {
-                    Id = listUserData.Category.Id,
-                    Name = listUserData.Category.Name,
+                    Id = 8099,
+                    Name = "string",
                 },
-                Tags = listUserData.Tags,
-                PhotoUrls = listUserData.PhotoUrls,
-                
+               Tags = new Category[1] 
+                { 
+                    new Category { 
+                        Id = 8020, 
+                        Name = "Dog" 
+                    } 
+                },
+                PhotoUrls = new string[] { "https://petstore.swagger.io/#/pet/updatePetsto" },
+
             };
 
             // Serialize Content
@@ -131,6 +137,11 @@ namespace Homework2
             createdUserData = listUserData.Id;
             string updatedName = listUserData.Name;
             string updatedStatus = listUserData.Status;
+            var categoryid = listUserData.Category.Id;
+            var categoryname = listUserData.Category.Name;
+            var photouls = listUserData.PhotoUrls[0];
+            
+
 
             #endregion
 
@@ -148,7 +159,9 @@ namespace Homework2
             Assert.AreEqual(userData.Id, createdUserData, "Id not matching");
             Assert.AreEqual(userData.Name, updatedName, "Name not matching");
             Assert.AreEqual(userData.Status, updatedStatus, "Status not matching");
-
+            Assert.AreEqual(userData.Category.Id, categoryid, "Category id not moatching");
+            Assert.AreEqual(userData.Category.Name, categoryname, "Category name not moatching");
+            Assert.AreEqual(userData.PhotoUrls[0], photouls, "PhotoUrls not moatching");
             #endregion
         }
     }
