@@ -20,7 +20,7 @@ namespace Homework2
         public string[] PhotoUrls { get; set; }
 
         [JsonProperty("tags")]
-        public List<Tags> Tags { get; set; }
+        public Category[] Tags { get; set; }
 
         [JsonProperty("status")]
         public string Status { get; set; }

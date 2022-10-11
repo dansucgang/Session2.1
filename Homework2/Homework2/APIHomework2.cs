@@ -49,9 +49,22 @@ namespace Homework2
             // Create Json Object
             UserModel userData = new UserModel()
             {
-                Id = 8012,
-                Name = "Tiger",
-                Status = "available"
+                Id = 8022,
+                Name = "Mio",
+                Status = "available",
+                Category = new Category()
+                {
+                    Id = 8018,
+                    Name = "string"
+                },
+                Tags = new Category[1] 
+                { 
+                    new Category { 
+                        Id = 8020, 
+                        Name = "Orange" 
+                    } 
+                },
+                PhotoUrls = new string[1] { "Photo_String" },
             };
 
             // Serialize Content
@@ -82,8 +95,16 @@ namespace Homework2
             userData = new UserModel()
             {
                 Id = listUserData.Id,
-                Name = "Gerger",
-                Status = listUserData.Status
+                Name = "Chimmy",
+                Status = listUserData.Status,
+                Category = new Category()
+                {
+                    Id = listUserData.Category.Id,
+                    Name = listUserData.Category.Name,
+                },
+                Tags = listUserData.Tags,
+                PhotoUrls = listUserData.PhotoUrls,
+                
             };
 
             // Serialize Content
@@ -108,8 +129,8 @@ namespace Homework2
 
             // filter created data
             createdUserData = listUserData.Id;
-            var updatedName = listUserData.Name;
-            var updatedStatus = listUserData.Status;
+            string updatedName = listUserData.Name;
+            string updatedStatus = listUserData.Status;
 
             #endregion
 
